@@ -59,7 +59,7 @@
 				
 				<!-- Logo -->
 				<div id="logo">
-					<a href="blog.php"><img src="images/cover.jpg" alt=""></a>
+					<a href="blog"><img src="images/cover.jpg" alt=""></a>
 				</div>
 
 
@@ -155,9 +155,9 @@
 
 						<li><a class="current" href="#">Pages</a>
 							<ul>
-								<li><a href="blog.php">Blog</a>
+								<li><a href="blog">Blog</a>
 									<ul>
-										<li><a href="blog.php">Blog</a></li>
+										<li><a href="blog">Blog</a></li>
 										<li><a href="blog-post.html">Blog Post</a></li>
 									</ul>
 								</li>
