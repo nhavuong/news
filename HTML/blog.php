@@ -1,3 +1,15 @@
+<?php
+
+	include('connect.php');
+	$sql = "SELECT * FROM articles limit 3";
+	
+	$results = mysqli_query($conn, $sql);
+	$articles = mysqli_fetch_all($results, MYSQLI_ASSOC);
+	mysqli_free_result($results);
+	mysqli_close($conn);
+
+?>
+
 <!DOCTYPE html>
 <head>
 
@@ -126,83 +138,38 @@
 	<div class="row">
 		<div class="col-md-8">
 
-			<!-- Blog Post -->
-			<div class="blog-post">
-				
-				<!-- Img -->
-				<a href="blog-post.html" class="post-img">
-					<img src="images/blog-post-01a.jpg" alt="">
-				</a>
-				
-				<!-- Content -->
-				<div class="post-content">
-					<h3><a href="blog-post.html">8 Tips to Help You Finding New Home</a></h3>
+			<?php foreach($articles as $article): ?>
 
-					<ul class="post-meta">
-						<li>Novemer 12, 2016</li>
-						<li><a href="#">5 Comments</a></li>
-					</ul>
+				<!-- Blog Post -->
+				<div class="blog-post">
+					
+					<!-- Img -->
+					<a href="blog-post.html" class="post-img">
+						<img src="images/<?php echo $article['article_img_path'] ?>" alt="">
+					</a>
+					
+					<!-- Content -->
+					<div class="post-content">
+						<h3><a href="blog-post.html"><?php echo $article['article_title'] ?></a></h3>
 
-					<p>Nam nisl lacus, dignissim ac tristique ut, scelerisque eu massa. Vestibulum ligula nunc, rutrum in malesuada vitae, tempus sed augue. Curabitur quis lectus quis augue dapibus facilisis.</p>
+						<ul class="post-meta">
+							<li><?php echo date($article['article_created_at'])?></li>
+							<li><a href="#">5 Comments</a></li>
+						</ul>
 
-					<a href="blog-post.html" class="read-more">Read More <i class="fa fa-angle-right"></i></a>
+						<p><?php 
+							$file = fopen("articles/".$article['article_content'], 'r');
+							for ($i = 0; $i < 3; $i ++){
+								echo fgets($file)."<br>";
+							}
+							fclose($file);
+						?></p>
+
+						<a href="blog-post.html" class="read-more">Read More <i class="fa fa-angle-right"></i></a>
+					</div>
 				</div>
-
-			</div>
 			<!-- Blog Post / End -->
-
-
-			<!-- Blog Post -->
-			<div class="blog-post">
-				
-				<!-- Img -->
-				<a href="blog-post.html" class="post-img">
-					<img src="images/blog-post-02a.jpg" alt="">
-				</a>
-				
-				<!-- Content -->
-				<div class="post-content">
-					<h3><a href="blog-post.html">Bedroom Colors You'll Never Regret</a></h3>
-
-					<ul class="post-meta">
-						<li>November 9, 2016</li>
-						<li><a href="#">5 Comments</a></li>
-					</ul>
-
-					<p>Nam nisl lacus, dignissim ac tristique ut, scelerisque eu massa. Vestibulum ligula nunc, rutrum in malesuada vitae, tempus sed augue. Curabitur quis lectus quis augue dapibus facilisis.</p>
-
-					<a href="blog-post.html" class="read-more">Read More <i class="fa fa-angle-right"></i></a>
-				</div>
-
-			</div>
-			<!-- Blog Post / End -->
-
-
-			<!-- Blog Post -->
-			<div class="blog-post">
-				
-				<!-- Img -->
-				<a href="blog-post.html" class="post-img">
-					<img src="images/blog-post-03a.jpg" alt="">
-				</a>
-				
-				<!-- Content -->
-				<div class="post-content">
-					<h3><a href="blog-post.html">What to Do a Year Before Buying Apartment</a></h3>
-
-					<ul class="post-meta">
-						<li>October 26, 2016</li>
-						<li><a href="#">3 Comments</a></li>
-					</ul>
-
-					<p>Nam nisl lacus, dignissim ac tristique ut, scelerisque eu massa. Vestibulum ligula nunc, rutrum in malesuada vitae, tempus sed augue. Curabitur quis lectus quis augue dapibus facilisis.</p>
-
-					<a href="blog-post.html" class="read-more">Read More <i class="fa fa-angle-right"></i></a>
-				</div>
-
-			</div>
-			<!-- Blog Post / End -->
-
+			<?php endforeach; ?>
 
 			<!-- Pagination -->
 			<div class="clearfix"></div>
