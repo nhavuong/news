@@ -35,7 +35,7 @@ $error = '';
 // You may add or edit lines in here.
 //
 // To make a field not required, simply delete the entire if statement for that field.
-// You will also have to remove required="required" from the input field, on index.html.
+// You will also have to remove required="required" from the input field, on index-1.html.
 //
 ///////////////////////////////////////////////////////////////////////////
 

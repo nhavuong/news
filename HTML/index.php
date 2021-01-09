@@ -15,7 +15,7 @@
 
 <!-- Basic Page Needs
 ================================================== -->
-<title>Home&Nha</title>
+<title>Home&Nhà</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link href="images/home&nha.png" rel="icon">
@@ -101,10 +101,6 @@
 	include('header.php');
 ?>
 
-
-
-
-
 <!-- Titlebar
 ================================================== -->
 <div id="titlebar">
@@ -112,14 +108,14 @@
 		<div class="row">
 			<div class="col-md-12">
 
-				<h2>Blog</h2>
+				<h2>New Articles</h2>
 				<span>Keep up to date with the latest news</span>
 				
 				<!-- Breadcrumbs -->
 				<nav id="breadcrumbs">
 					<ul>
 						<li><a href="#">Home</a></li>
-						<li>Blog</li>
+						<li>Headlines</li>
 					</ul>
 				</nav>
 
