@@ -193,7 +193,7 @@
 			<div class="right-side">
 				<!-- Header Widget -->
 				<div class="header-widget">
-					<a href="login-register.html" class="sign-in"><i class="fa fa-user"></i> Log In / Register</a>
+					<a href="login-register.php" class="sign-in"><i class="fa fa-user"></i> Log In / Register</a>
 					<!-- <a href="submit-property.html" class="button border">Submit Property</a> -->
 				</div>
 				<!-- Header Widget / End -->

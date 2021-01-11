@@ -1,11 +1,14 @@
-<?php 
+<?php
 
-	// connect to the database
-	$conn = mysqli_connect('localhost', 'root', '', 'home_nha');
+$serverName = "localhost";
+$dbName = "home_nha";
+$dbUser = "root";
+$dbPwd = "";
 
-	// check connection
-	if(!$conn){
-		echo 'Connection error: '. mysqli_connect_error();
-	}
+// connect to the database
+$conn = mysqli_connect($serverName, $dbUser, $dbPwd, $dbName);
 
-?>
+// check connection
+if (!$conn) {
+	die('Connection error: ' . mysqli_connect_error());
+}
