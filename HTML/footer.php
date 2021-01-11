@@ -2,12 +2,13 @@
 ================================================== -->
 <div class="margin-top-55"></div>
 
-<div id="footer" class="sticky-footer">
+<div id="footer" class="footer">
 	<!-- Main -->
 	<div class="container">
 		<div class="row">
 			<div class="col-md-5 col-sm-6">
-				<img class="footer-logo" src="images/logo.png" alt="">
+				<!-- <img class="footer-logo" src="images/cover.jpg" alt=""> -->
+				<h1>Home&Nhà</h1>
 				<br><br>
 				<p>Morbi convallis bibendum urna ut viverra. Maecenas quis consequat libero, a feugiat eros. Nunc ut lacinia tortor morbi ultricies laoreet ullamcorper phasellus semper.</p>
 			</div>
@@ -36,7 +37,7 @@
 			<div class="col-md-3  col-sm-12">
 				<h4>Contact Us</h4>
 				<div class="text-widget">
-					<span>12345 Little Lonsdale St, Melbourne</span> <br>
+					<span>12345 Little Lonsdale St,ABC</span> <br>
 					Phone: <span>(123) 123-456 </span><br>
 					E-Mail:<span> <a href="#">office@example.com</a> </span><br>
 				</div>
@@ -55,7 +56,7 @@
 		<!-- Copyright -->
 		<div class="row">
 			<div class="col-md-12">
-				<div class="copyrights">© 2016 Findeo. All Rights Reserved.</div>
+				<div class="copyrights">© 2021 Home&Nhà. All Rights Reserved.</div>
 			</div>
 		</div>
 
