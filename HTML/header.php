@@ -59,7 +59,7 @@
 				
 				<!-- Logo -->
 				<div id="logo">
-					<a href="index"><img src="images/cover.jpg" alt=""></a>
+					<a href="index"><img src="images/cover.jpg" alt="" ></a>
 				</div>
 
 

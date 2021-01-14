@@ -10,10 +10,11 @@
 	<link href="images/home&nha.png" rel="icon">
 	<!-- CSS
 ================================================== -->
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style.css?v=<?php echo time(); ?>">
+	<!-- <link rel="stylesheet" href="css/style.css"> -->
 	<link rel="stylesheet" href="css/color.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script>
+	<!-- <script>
 		$(document).ready(function() {
 			$("#reg-form").submit(function(event) {
 				event.preventDefault();
@@ -24,7 +25,7 @@
 				$(#)
 			});
 		});
-	</script>
+	</script> -->
 </head>
 
 <body>
@@ -153,12 +154,13 @@
 
 							<!-- Login -->
 							<div class="tab-content" id="tab1" style="display: none;">
-								<form action="include/login.inc.php" method="post" class="login">
+								<form method="post" class="login" id="login">
 
 									<p class="form-row form-row-wide">
 										<label for="username">
 											<i class="im im-icon-Male"></i>
 											<input type="text" class="input-text" name="username" id="username" placeholder="Username" />
+                                			<small>Error message</small>
 										</label>
 									</p>
 
@@ -166,6 +168,7 @@
 										<label for="password">
 											<i class="im im-icon-Lock-2"></i>
 											<input class="input-text" type="password" name="password" id="password" placeholder="Password" />
+                                			<small>Error message</small>
 										</label>
 									</p>
 
@@ -186,21 +189,23 @@
 							<!-- Register -->
 							<div class="tab-content" id="tab2" style="display: none;">
 
-								<form id="reg-form" action="login-register" method="post" class="register">
+								<form id="register" class="register">
 
 									<p class="form-row form-row-wide">
 										<label for="username2">
-											<i class="im im-icon-Male"></i>
-											<input type="text" class="input-text" name="username" id="username2" placeholder="Username" min="6" max="20" required />
+										<i class="im im-icon-Male"></i>
+										<input type="text" class="input-text" name="username" id="username2" placeholder="Username"/>
+										<small>Error message</small>
 										</label>
 										<!-- username error -->
-									<p id="username-message"></p>
+										<p id="username-message"></p>
 									</p>
 
 									<p class="form-row form-row-wide">
 										<label for="email2">
 											<i class="im im-icon-Mail"></i>
-											<input type="text" class="input-text" name="email" id="email2" placeholder="Email Address" required />
+											<input type="text" class="input-text" name="email" id="email2" placeholder="Email Address"/>
+                                			<small>Error message</small>
 										</label>
 										<p id="email-message"></p>
 									</p>
@@ -208,15 +213,16 @@
 									<p class="form-row form-row-wide">
 										<label for="password1">
 											<i class="im im-icon-Lock-2"></i>
-											<input class="input-text" type="password" name="password1" id="password1" placeholder="Password" required />
+											<input class="input-text" type="password" name="password1" id="password1" placeholder="Password"/ pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+                                			<small>Error message</small>
 										</label>
-										<p id="pwd1-message"></p>
 									</p>
 
 									<p class="form-row form-row-wide">
 										<label for="password2">
 											<i class="im im-icon-Lock-2"></i>
-											<input class="input-text" type="password" name="password2" id="password2" placeholder="Repeat Password" required />
+											<input class="input-text" type="password" name="password2" id="password2" placeholder="Confirm Password"/>
+                                			<small>Error message</small>
 										</label>
 										<p id="pwd2-message"></p>
 									</p>
@@ -227,7 +233,13 @@
 
 								</form>
 							</div>
-
+							<div id="pwd1-message">
+								<h5>Password <b>MUST</b> contain the following:</h5>
+								<h6 id="letter" class="invalid">A <b>lowercase</b> letter</h6>
+								<h6 id="capital" class="invalid">A <b>capital (uppercase)</b> letter</h6>
+								<h6 id="number" class="invalid">A <b>number</b></h6>
+								<h6 id="length" class="invalid">Minimum <b>8 characters</b></h6>
+							</div>
 						</div>
 					</div>
 
@@ -263,7 +275,7 @@
 		<script type="text/javascript" src="scripts/mmenu.min.js"></script>
 		<script type="text/javascript" src="scripts/tooltips.min.js"></script>
 		<script type="text/javascript" src="scripts/custom.js"></script>
-
+		<script type="text/javascript" src="scripts/validation.js"></script>
 
 
 

@@ -201,14 +201,12 @@ ul.top-bar-menu li i {
 	position: relative;
 }
 
-
-
 /* ---------------------------------- */
 /* Header
 ------------------------------------- */
-#logo { display: inline-block; margin-top: 1px; }
+/* #logo { display: inline-block; margin: 1px; } */
 
-#logo img { max-height: 43px; width: auto; transform: translate3d(0,0,0); }
+#logo img { max-height: 50px; width: auto; transform: translate3d(0,0,0);}
 img.footer-logo { max-height: 43px; width: auto; transform: translate3d(0,0,0); }
 
 #header {
@@ -12251,6 +12249,89 @@ body .daterangepicker .drp-buttons button.cancelBtn {
 		box-sizing: content-box
 	}
 
+
+	.form-row.success input{
+		border-color: #2ecc71 !important;
+	  }
+	  
+	.form-row.error input{
+		border-color: #e74c3c !important
+	  }
+	
+
+	.form-row i.fa-check-circle{
+		position: absolute !important;
+		top: 40px !important;
+		right: 10px !important;
+		visibility: hidden !important;
+	}
+
+	.form-row i.fa-exclamation-circle{
+		position: absolute !important;
+		top: 40px !important;
+		right: 10px !important;
+		visibility: hidden !important;
+	}
+
+	.form-row.success i.fa-check-circle {
+		color: #2ecc71 !important;
+		visibility: visible !important;
+	}
+	.form-row.error i.fa-exclamation-circle {
+		color: #e74c3c !important;
+		visibility: visible !important;
+	}
+	
+	.form-row small{
+		visibility: hidden !important;
+		position: absolute !important;
+		bottom: 0 !important;
+		left: 5px !important;
+		top: 30px;
+	}
+	
+	.form-row.error small{
+		color: #e74c3c !important;
+		visibility: visible !important;
+	}
+
+	/* The message box is shown when the user clicks on the password field */
+#pwd1-message {
+	display:none;
+	background: #f1f1f1;
+	color: #000;
+	position: relative;
+	padding: 20px;
+	margin-top: 10px;
+  }
+  
+  #pwd1-message p {
+	padding: 10px 35px;
+	font-size: 18px;
+  }
+  
+  /* Add a green text color and a checkmark when the requirements are right */
+  .valid {
+	color: green;
+  }
+  
+  .valid:before {
+	position: relative;
+	left: -15px;
+	content: "\2713";
+  }
+  
+  /* Add a red text color and an "x" icon when the requirements are wrong */
+  .invalid {
+	color: red;
+  }
+  
+  .invalid:before {
+	position: relative;
+	left: -15px;
+	content: "\2613";
+  }
+
 	/* ---------------------------------- */
 	/* Offsets
 	------------------------------------- */
@@ -12882,5 +12963,7 @@ body .daterangepicker .drp-buttons button.cancelBtn {
 	.property-slider .item,
 	.property-slider.default .item  { height: 200px; }
 }
+
+
 
 
