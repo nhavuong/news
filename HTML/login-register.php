@@ -14,18 +14,6 @@
 	<!-- <link rel="stylesheet" href="css/style.css"> -->
 	<link rel="stylesheet" href="css/color.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<!-- <script>
-		$(document).ready(function() {
-			$("#reg-form").submit(function(event) {
-				event.preventDefault();
-				var username = $("#username2").val();
-				var email2 = $("#email2").val();
-				var password1 = $("#password1").val();
-				var password2 = $("#password2").val();
-				$(#)
-			});
-		});
-	</script> -->
 </head>
 
 <body>
@@ -160,7 +148,7 @@
 										<label for="username">
 											<i class="im im-icon-Male"></i>
 											<input type="text" class="input-text" name="username" id="username" placeholder="Username" />
-                                			<small>Error message</small>
+											<small>Error message</small>
 										</label>
 									</p>
 
@@ -168,7 +156,7 @@
 										<label for="password">
 											<i class="im im-icon-Lock-2"></i>
 											<input class="input-text" type="password" name="password" id="password" placeholder="Password" />
-                                			<small>Error message</small>
+											<small>Error message</small>
 										</label>
 									</p>
 
@@ -193,38 +181,38 @@
 
 									<p class="form-row form-row-wide">
 										<label for="username2">
-										<i class="im im-icon-Male"></i>
-										<input type="text" class="input-text" name="username" id="username2" placeholder="Username"/>
-										<small>Error message</small>
+											<i class="im im-icon-Male"></i>
+											<input type="text" class="input-text" name="username" id="username2" placeholder="Username" />
+											<small>Error message</small>
 										</label>
 										<!-- username error -->
-										<p id="username-message"></p>
+									<p id="username-message"></p>
 									</p>
 
 									<p class="form-row form-row-wide">
 										<label for="email2">
 											<i class="im im-icon-Mail"></i>
-											<input type="text" class="input-text" name="email" id="email2" placeholder="Email Address"/>
-                                			<small>Error message</small>
+											<input type="text" class="input-text" name="email" id="email2" placeholder="Email Address" />
+											<small>Error message</small>
 										</label>
-										<p id="email-message"></p>
+									<p id="email-message"></p>
 									</p>
 
 									<p class="form-row form-row-wide">
 										<label for="password1">
 											<i class="im im-icon-Lock-2"></i>
-											<input class="input-text" type="password" name="password1" id="password1" placeholder="Password"/ pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
-                                			<small>Error message</small>
+											<input class="input-text" type="password" name="password1" id="password1" placeholder="Password" / pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+											<small>Error message</small>
 										</label>
 									</p>
 
 									<p class="form-row form-row-wide">
 										<label for="password2">
 											<i class="im im-icon-Lock-2"></i>
-											<input class="input-text" type="password" name="password2" id="password2" placeholder="Confirm Password"/>
-                                			<small>Error message</small>
+											<input class="input-text" type="password" name="password2" id="password2" placeholder="Confirm Password" />
+											<small>Error message</small>
 										</label>
-										<p id="pwd2-message"></p>
+									<p id="pwd2-message"></p>
 									</p>
 
 									<p class="form-row">
