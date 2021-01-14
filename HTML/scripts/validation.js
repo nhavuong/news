@@ -35,7 +35,10 @@ login.addEventListener("submit", (e) => {
 
 register.addEventListener("submit", (e) => {
   e.preventDefault();
-  checkInputs();
+
+  if(checkInputs()){
+    register.submit();
+  }
 });
 
 // show password condition when user click on the password field
