@@ -1,3 +1,5 @@
+var isFormValid = true;
+
 // validation for register
 const register = document.getElementById("register");
 const username2 = document.getElementById("username2");
@@ -33,12 +35,29 @@ login.addEventListener("submit", (e) => {
   }
 });
 
-register.addEventListener("submit", (e) => {
-  e.preventDefault();
+var formObject = [
+  { fieldName: username2, valid: false },
+  { fieldName: email2, valid: false },
+  { fieldName: password1, valid: false },
+  { fieldName: password2, valid: false },
+];
 
-  if(checkInputs()){
-    register.submit();
+register.addEventListener("submit", (e) => {
+  isFormValid = true;
+  e.preventDefault();
+  checkInputs();
+
+  formObject.forEach((item) => {
+    if (!item.valid) {
+      isFormValid = false;
+    }
+  });
+  if (isFormValid) {
+    window.location.href = "include/register.inc.php";
   }
+  // if (checkInputs()) {
+  //   register.submit();
+  // }
 });
 
 // show password condition when user click on the password field
