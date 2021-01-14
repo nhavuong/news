@@ -43,21 +43,21 @@ var formObject = [
 ];
 
 register.addEventListener("submit", (e) => {
-  isFormValid = true;
+  console.log("On submit");
+  isFormValid = false;
   e.preventDefault();
   checkInputs();
 
-  formObject.forEach((item) => {
-    if (!item.valid) {
-      isFormValid = false;
-    }
-  });
-  if (isFormValid) {
-    window.location.href = "include/register.inc.php";
+  console.log(formObject[0].fieldName + " " + formObject[0].valid);
+  console.log(formObject[1].fieldName + " " + formObject[1].valid);
+  console.log(formObject[2].fieldName + " " + formObject[2].valid);
+  console.log(formObject[3].fieldName + " " + formObject[3].valid);
+  if(formObject[0].valid == true && formObject[1].valid == true && formObject[2].valid == true && formObject[3].valid == true){
+    console.log("Form is valid. " + isFormValid);
   }
-  // if (checkInputs()) {
-  //   register.submit();
-  // }
+  else{
+    console.log("Form is not valid. " + isFormValid);
+  }
 });
 
 // show password condition when user click on the password field
