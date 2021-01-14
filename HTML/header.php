@@ -17,7 +17,9 @@
 						<div class="top-bar-dropdown">
 							<span>Dropdown Menu</span>
 							<ul class="options">
-								<li><div class="arrow"></div></li>
+								<li>
+									<div class="arrow"></div>
+								</li>
 								<li><a href="#">Nice First Link</a></li>
 								<li><a href="#">Second Link With Long Title</a></li>
 								<li><a href="#">Third Link</a></li>
@@ -53,13 +55,13 @@
 	<!-- Header -->
 	<div id="header">
 		<div class="container">
-			
+
 			<!-- Left Side Content -->
 			<div class="left-side">
-				
+
 				<!-- Logo -->
 				<div id="logo">
-					<a href="index"><img src="images/cover.jpg" alt="" ></a>
+					<a href="index"><img src="images/cover.jpg" alt=""></a>
 				</div>
 
 
@@ -157,7 +159,7 @@
 								<li><a href="#">Life Insurance</a>
 								<li><a href="#">Tax</a>
 
-								<!-- <li><a href="compare-properties.html">Compare Properties</a></li>
+									<!-- <li><a href="compare-properties.html">Compare Properties</a></li>
 								<li><a href="submit-property.html">Submit Property</a></li> -->
 							</ul>
 						</li>
@@ -175,7 +177,7 @@
 								<li><a href="pricing-tables.html">Advertise with us</a></li>
 								<li><a href="#">Write for us</a></li>
 								<li><a href="contact.html">Contact</a></li>
-								<!-- <li><a href="elements.html">Elements</a></li> -->	
+								<!-- <li><a href="elements.html">Elements</a></li> -->
 								<!-- <li><a href="typography.html">Typography</a></li>
 								<li><a href="icons.html">Icons</a></li> -->
 							</ul>
@@ -185,7 +187,7 @@
 				</nav>
 				<div class="clearfix"></div>
 				<!-- Main Navigation / End -->
-				
+
 			</div>
 			<!-- Left Side Content / End -->
 
@@ -193,7 +195,7 @@
 			<div class="right-side">
 				<!-- Header Widget -->
 				<div class="header-widget">
-					<a href="login-register.php" class="sign-in"><i class="fa fa-user"></i> Log In / Register</a>
+					<a href="login-register" class="sign-in"><i class="fa fa-user"></i> Log In / Register</a>
 					<!-- <a href="submit-property.html" class="button border">Submit Property</a> -->
 				</div>
 				<!-- Header Widget / End -->
@@ -202,8 +204,8 @@
 
 		</div>
 	</div>
-    <!-- Header / End -->
-    
-    </header>
+	<!-- Header / End -->
+
+</header>
 <div class="clearfix"></div>
 <!-- Header Container / End -->

@@ -1,36 +1,36 @@
 <?php
-if (isset($_POST["register"])) {
-    $username = $_POST["username"];
-    $email = $_POST["email"];
-    $password1 = $_POST["password1"];
-    $password2 = $_POST["password2"];
 
-    require_once 'connect.php';
-    require_once 'login.functions.inc.php';
+include('../connect.php');
+include('user.functions.php');
 
-    if (emptyInputSignup($username, $email, $password1, $password2) !== false) {
-        header("location: ../login-register?error=emptyinput");
-        exit();
-    }
-    if (invalidUsername($username) !== false) {
-        header("location: ../login-register?error=invalidusername");
-        exit();
-    }
-    if (invalidEmail($email) !== false) {
-        header("location: ../login-register?error=invalidemail");
-        exit();
-    }
-    if (pwdMatch($password1, $password2) !== false) {
-        header("location: ../login-register?error=pwdnotmatch");
-        exit();
-    }
-    if (usernameExist($conn, $username) !== false) {
-        header("location: ../login-register?error=usernameexist");
-        exit();
-    }
+if (isset($_POST["password2"])) {
 
-    createUser($username, $email, $password1);
-} else {
-    header("location: ../login-register.php");
-    exit();
+    $username = htmlspecialchars($_POST["username"]);
+    $email = htmlspecialchars($_POST["email"]);
+    $password1 = htmlspecialchars($_POST["password1"]);
+    $password2 = htmlspecialchars($_POST["password2"]);
+
+    if (checkExistUser($conn, $username, $email) !== false) {
+        header("location: ../login-register.php?error=sqlfail");
+        mysqli_close($conn);
+        exit();
+    } else {
+
+        $hashedPwd = password_hash($password2, PASSWORD_DEFAULT);
+
+        $sql = "INSERT INTO users (id, username, email, f_name, l_name, phone, created_at, pwd) VALUES (NULL, ?, ?, NULL, NULL, NULL, current_timestamp(), ?);";
+
+        $stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
+            header("location: ../login-register.php?error=sqlfail");
+            exit();
+        } else {
+            mysqli_stmt_bind_param($stmt, "sss", $username, $email, $hashedPwd);
+            mysqli_stmt_execute($stmt);
+            mysqli_stmt_close($stmt);
+            header("location: ../index");
+            mysqli_close($conn);
+            exit();
+        }
+    }
 }

@@ -44,19 +44,19 @@ var formObject = [
 
 register.addEventListener("submit", (e) => {
   console.log("On submit");
-  isFormValid = false;
   e.preventDefault();
   checkInputs();
 
-  console.log(formObject[0].fieldName + " " + formObject[0].valid);
-  console.log(formObject[1].fieldName + " " + formObject[1].valid);
-  console.log(formObject[2].fieldName + " " + formObject[2].valid);
-  console.log(formObject[3].fieldName + " " + formObject[3].valid);
+  // console.log(formObject[0].fieldName + " " + formObject[0].valid);
+  // console.log(formObject[1].fieldName + " " + formObject[1].valid);
+  // console.log(formObject[2].fieldName + " " + formObject[2].valid);
+  // console.log(formObject[3].fieldName + " " + formObject[3].valid);
   if(formObject[0].valid == true && formObject[1].valid == true && formObject[2].valid == true && formObject[3].valid == true){
-    console.log("Form is valid. " + isFormValid);
+    console.log("Form is valid. ");
+    register.submit();
   }
   else{
-    console.log("Form is not valid. " + isFormValid);
+    console.log("Form is not valid. ");
   }
 });
 
@@ -156,9 +156,19 @@ function setErrorFor(input, message) {
 
   small.innerText = message;
   formControl.className = "form-row error";
+  formObject.forEach(item =>{
+    if(item.fieldName == input){
+      item.valid = false;
+    }
+  })
 }
 
 function setSuccessFor(input) {
   const formControl = input.parentElement;
   formControl.className = "form-row success";
+  formObject.forEach(item =>{
+    if(item.fieldName == input){
+      item.valid = true;
+    }
+  })
 }

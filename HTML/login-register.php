@@ -177,7 +177,7 @@
 							<!-- Register -->
 							<div class="tab-content" id="tab2" style="display: none;">
 
-								<form id="register" class="register">
+								<form id="register" class="register" action="include/register.inc.php" method="POST">
 
 									<p class="form-row form-row-wide">
 										<label for="username2">
