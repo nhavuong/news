@@ -188,8 +188,10 @@
 										<!-- username error -->
 									<p id="username-message">
 										<?php
-										if ($_GET['error'] == "bothexist" || $_GET['error'] == "usernameexist") {
-											echo "Username exists already.";
+										if (isset($_GET['error'])) {
+											if ($_GET['error'] == "bothexist" || $_GET['error'] == "usernameexist") {
+												echo "Username exists already.";
+											}
 										}
 										?>
 									</p>
@@ -203,8 +205,10 @@
 										</label>
 									<p id="email-message">
 										<?php
-										if ($_GET['error'] == "bothexist" || $_GET['error'] == "emailexist") {
-											echo "Email exists already.";
+										if (isset($_GET['error'])) {
+											if ($_GET['error'] == "bothexist" || $_GET['error'] == "emailexist") {
+												echo "Email exists already.";
+											}
 										}
 										?>
 									</p>
