@@ -10,12 +10,15 @@ const capital = document.getElementById("capital");
 const number = document.getElementById("number");
 const length = document.getElementById("length");
 const password2 = document.getElementById("password2");
+const login = document.getElementById("login");
+
 
 // validation for login
 const username = document.getElementById("username");
 const password = document.getElementById("password");
 login.addEventListener("submit", (e) => {
   e.preventDefault();
+  var isLoginFormValid = false;
 
   const usernameValue = username.value.trim();
   const passwordValue = password.value.trim();
@@ -32,6 +35,11 @@ login.addEventListener("submit", (e) => {
     setErrorFor(password, "Password is required");
   } else {
     setSuccessFor(password);
+  }
+
+  // if login form valid, then submit
+  if(isLoginFormValid){
+    login.submit();
   }
 });
 

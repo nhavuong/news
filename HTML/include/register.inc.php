@@ -9,13 +9,24 @@ if (isset($_POST["password2"])) {
     $email = htmlspecialchars($_POST["email"]);
     $password1 = htmlspecialchars($_POST["password1"]);
     $password2 = htmlspecialchars($_POST["password2"]);
+    $usernameExist = checkExistUsername($conn, $username);
+    $emailExist = checkExistEmail($conn, $email);
+    
 
-    if (checkExistUser($conn, $username, $email) !== false) {
-        header("location: ../login-register.php?error=sqlfail");
+
+    if ($usernameExist !== false && $emailExist !== false) {
+        header("location: ../login-register.php?error=bothexist#tab2");
+        mysqli_close($conn);
+        exit();
+    } else if ($usernameExist !== false && $emailExist === false) {
+        header("location: ../login-register.php?error=usernameexist#tab2");
+        mysqli_close($conn);
+        exit();
+    } else if ($emailExist !== false && $usernameExist === false) {
+        header("location: ../login-register.php?error=emailexist#tab2");
         mysqli_close($conn);
         exit();
     } else {
-
         $hashedPwd = password_hash($password2, PASSWORD_DEFAULT);
 
         $sql = "INSERT INTO users (id, username, email, f_name, l_name, phone, created_at, pwd) VALUES (NULL, ?, ?, NULL, NULL, NULL, current_timestamp(), ?);";

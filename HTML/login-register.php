@@ -141,7 +141,7 @@
 						<div class="tabs-container alt">
 
 							<!-- Login -->
-							<div class="tab-content" id="tab1" style="display: none;">
+							<div class="tab-content" id="tab1" style="display: none;" action="include/login.inc.php">
 								<form method="post" class="login" id="login">
 
 									<p class="form-row form-row-wide">
@@ -186,7 +186,13 @@
 											<small>Error message</small>
 										</label>
 										<!-- username error -->
-									<p id="username-message"></p>
+									<p id="username-message">
+										<?php
+										if ($_GET['error'] == "bothexist" || $_GET['error'] == "usernameexist") {
+											echo "Username exists already.";
+										}
+										?>
+									</p>
 									</p>
 
 									<p class="form-row form-row-wide">
@@ -195,7 +201,13 @@
 											<input type="text" class="input-text" name="email" id="email2" placeholder="Email Address" />
 											<small>Error message</small>
 										</label>
-									<p id="email-message"></p>
+									<p id="email-message">
+										<?php
+										if ($_GET['error'] == "bothexist" || $_GET['error'] == "emailexist") {
+											echo "Email exists already.";
+										}
+										?>
+									</p>
 									</p>
 
 									<p class="form-row form-row-wide">
@@ -212,7 +224,6 @@
 											<input class="input-text" type="password" name="password2" id="password2" placeholder="Confirm Password" />
 											<small>Error message</small>
 										</label>
-									<p id="pwd2-message"></p>
 									</p>
 
 									<p class="form-row">
