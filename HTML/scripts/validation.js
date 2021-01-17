@@ -12,7 +12,6 @@ const length = document.getElementById("length");
 const password2 = document.getElementById("password2");
 const login = document.getElementById("login");
 
-
 // validation for login
 const username = document.getElementById("username");
 const password = document.getElementById("password");
@@ -38,7 +37,7 @@ login.addEventListener("submit", (e) => {
   }
 
   // if login form valid, then submit
-  if(isLoginFormValid){
+  if (isLoginFormValid) {
     login.submit();
   }
 });
@@ -59,11 +58,15 @@ register.addEventListener("submit", (e) => {
   // console.log(formObject[1].fieldName + " " + formObject[1].valid);
   // console.log(formObject[2].fieldName + " " + formObject[2].valid);
   // console.log(formObject[3].fieldName + " " + formObject[3].valid);
-  if(formObject[0].valid == true && formObject[1].valid == true && formObject[2].valid == true && formObject[3].valid == true){
+  if (
+    formObject[0].valid == true &&
+    formObject[1].valid == true &&
+    formObject[2].valid == true &&
+    formObject[3].valid == true
+  ) {
     console.log("Form is valid. ");
     register.submit();
-  }
-  else{
+  } else {
     console.log("Form is not valid. ");
   }
 });
@@ -164,19 +167,19 @@ function setErrorFor(input, message) {
 
   small.innerText = message;
   formControl.className = "form-row error";
-  formObject.forEach(item =>{
-    if(item.fieldName == input){
+  formObject.forEach((item) => {
+    if (item.fieldName == input) {
       item.valid = false;
     }
-  })
+  });
 }
 
 function setSuccessFor(input) {
   const formControl = input.parentElement;
   formControl.className = "form-row success";
-  formObject.forEach(item =>{
-    if(item.fieldName == input){
+  formObject.forEach((item) => {
+    if (item.fieldName == input) {
       item.valid = true;
     }
-  })
+  });
 }

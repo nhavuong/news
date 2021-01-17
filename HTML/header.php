@@ -119,6 +119,7 @@
 								</li> -->
 							</ul>
 						</li>
+						<li><a href="#">Golden Age</a></li>
 
 						<li><a href="#">Features</a>
 							<ul>
@@ -127,15 +128,6 @@
 										<li><a href="single-property-page-1.html">Property Style 1</a></li>
 										<li><a href="single-property-page-2.html">Property Style 2</a></li>
 										<li><a href="single-property-page-3.html">Property Style 3</a></li>
-									</ul> -->
-								</li>
-								<li><a href="#">Golden Age</a>
-									<!-- <ul>
-										<li><a href="index-1.html">Home Search 1</a></li>
-										<li><a href="index-2.html">Home Search 2</a></li>
-										<li><a href="index-3.html">Home Search 3</a></li>
-										<li><a href="listings-list-full-width.html">Advanced Style</a></li>
-										<li><a href="listings-list-with-sidebar.html">Sidebar Search</a></li>
 									</ul> -->
 								</li>
 								<li><a href="#">My Account</a>
@@ -172,7 +164,7 @@
 										<li><a href="blog-post.html">Blog Post</a></li>
 									</ul>
 								</li> -->
-								<li><a href="#">Subscription</a></li>
+								<li><a href="subscription.html">Subscription</a></li>
 								<li><a href="#">Archive</a></li>
 								<li><a href="pricing-tables.html">Advertise with us</a></li>
 								<li><a href="#">Write for us</a></li>

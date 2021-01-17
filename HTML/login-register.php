@@ -187,13 +187,13 @@
 										</label>
 										<!-- username error -->
 									<p id="username-message">
-										<?php
+									<?php
 										if (isset($_GET['error'])) {
 											if ($_GET['error'] == "bothexist" || $_GET['error'] == "usernameexist") {
 												echo "Username exists already.";
 											}
 										}
-										?>
+									?>
 									</p>
 									</p>
 
