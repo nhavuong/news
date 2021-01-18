@@ -16,8 +16,8 @@ const login = document.getElementById("login");
 const username = document.getElementById("username");
 const password = document.getElementById("password");
 login.addEventListener("submit", (e) => {
-  e.preventDefault();
-  var isLoginFormValid = false;
+  // e.preventDefault();
+  var isLoginFormValid = true;
 
   const usernameValue = username.value.trim();
   const passwordValue = password.value.trim();
@@ -37,8 +37,8 @@ login.addEventListener("submit", (e) => {
   }
 
   // if login form valid, then submit
-  if (isLoginFormValid) {
-    login.submit();
+  if (!isLoginFormValid) {
+    e.preventDefault();
   }
 });
 
@@ -51,13 +51,9 @@ var formObject = [
 
 register.addEventListener("submit", (e) => {
   console.log("On submit");
-  e.preventDefault();
+  // e.preventDefault();
   checkInputs();
 
-  // console.log(formObject[0].fieldName + " " + formObject[0].valid);
-  // console.log(formObject[1].fieldName + " " + formObject[1].valid);
-  // console.log(formObject[2].fieldName + " " + formObject[2].valid);
-  // console.log(formObject[3].fieldName + " " + formObject[3].valid);
   if (
     formObject[0].valid == true &&
     formObject[1].valid == true &&
@@ -65,9 +61,10 @@ register.addEventListener("submit", (e) => {
     formObject[3].valid == true
   ) {
     console.log("Form is valid. ");
-    register.submit();
+    // register.submit();
   } else {
     console.log("Form is not valid. ");
+	e.preventDefault();
   }
 });
 

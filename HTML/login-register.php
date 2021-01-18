@@ -141,8 +141,8 @@
 						<div class="tabs-container alt">
 
 							<!-- Login -->
-							<div class="tab-content" id="tab1" style="display: none;" action="include/login.inc.php">
-								<form method="post" class="login" id="login">
+							<div class="tab-content" id="tab1" style="display: none;" >
+								<form method="post" class="login" id="login" action="include/login.inc.php">
 
 									<p class="form-row form-row-wide">
 										<label for="username">

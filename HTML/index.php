@@ -1,6 +1,6 @@
 <?php
 
-	include('connect.php');
+	include('include/connect.php');
 	$sql = "SELECT * FROM articles limit 3";
 	
 	$results = mysqli_query($conn, $sql);

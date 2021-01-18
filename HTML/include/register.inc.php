@@ -1,9 +1,9 @@
 <?php
 
-include('../connect.php');
+include('connect.php');
 include('user.functions.php');
 
-if (isset($_POST["password2"])) {
+if (isset($_POST["register"])) {
 
     $username = htmlspecialchars($_POST["username"]);
     $email = htmlspecialchars($_POST["email"]);
@@ -16,16 +16,13 @@ if (isset($_POST["password2"])) {
 
     if ($usernameExist !== false && $emailExist !== false) {
         header("location: ../login-register.php?error=bothexist#tab2");
-        mysqli_close($conn);
-        exit();
+        
     } else if ($usernameExist !== false && $emailExist === false) {
         header("location: ../login-register.php?error=usernameexist#tab2");
-        mysqli_close($conn);
-        exit();
+        
     } else if ($emailExist !== false && $usernameExist === false) {
         header("location: ../login-register.php?error=emailexist#tab2");
-        mysqli_close($conn);
-        exit();
+        
     } else {
         $hashedPwd = password_hash($password2, PASSWORD_DEFAULT);
 
@@ -34,14 +31,17 @@ if (isset($_POST["password2"])) {
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
             header("location: ../login-register.php?error=sqlfail");
-            exit();
         } else {
             mysqli_stmt_bind_param($stmt, "sss", $username, $email, $hashedPwd);
             mysqli_stmt_execute($stmt);
-            mysqli_stmt_close($stmt);
+            $_SESSION['username'] = $username;
             header("location: ../index");
-            mysqli_close($conn);
-            exit();
         }
+        mysqli_stmt_close($stmt);
     }
+    mysqli_close($conn);
+    exit();
+}
+else{
+    echo "wrong hit";
 }
